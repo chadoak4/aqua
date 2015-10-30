@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root 'pages#show'
 
+  # root 'cleanups#index'
+
 
 
 

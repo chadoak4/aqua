@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-		<title>Aqua Zest/Home</title>
+		<title>Aqua Zest</title>
 	</head>
 	<body>
 		<nav class="navbar navbar-default-pages">
@@ -13,8 +13,11 @@
         	  <%= image_tag('aqualogo.png', height: '70', width: '140') %>
 					</div>
 					<ul class="nav navbar-nav navbar-right">
+						<% if user_signed_in? %>
+						<li><%= link_to "Home", cleanups_path %></li>
+						<% else %>
 						<li><%= link_to "Log In", new_user_session_path %></li>
-
+						<% end %>
       		</ul>
     		</div>
   		</div>
@@ -42,10 +45,27 @@
 	</main>
 	<main class='second'>
 		<div class="row">
-			<div class="col-md-1">one</div>
-			<div class="col-md-5 col-centered ">two</div>
-			<div class="col-md-5 col-centered ">three</div>
-			<div class="col-md-1">four</div>
+			<div class="col-md-4 col-centered text-center pic-text">
+					<%= image_tag('turtle.jpg', height: '250', width: '350', :class => "style_image") %>
+				<h4>Stay Informed</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+				</div>
+			<div class="col-md-4 col-centered text-center pic-text ">
+				<%= image_tag('aqualogo.png', height: '250', width: '350', :class => "style_image") %>
+				<h4>Get Involved</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+			</div>
+			<div class="col-md-4 col-centered text-center pic-text">
+				<%= image_tag('clean.jpg', height: '250', width: '350', :class => "style_image") %>
+				<h4>Take Action</h4>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+			</div>
 		</div>
 	</div>
 </main>

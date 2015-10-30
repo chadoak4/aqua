@@ -14,7 +14,7 @@ class CleanupsController < ApplicationController
     @cleanup = Cleanup.new(cleanup_params)
 
     if @cleanup.save
-      redirect_to root_path
+      redirect_to cleanups_path
     else
       render 'new'
     end
@@ -45,7 +45,7 @@ class CleanupsController < ApplicationController
 
     def destroy
       @cleanup.destroy
-      redirect_to root_path
+      redirect_to cleanups_path
     end
 
     def cleanup_params

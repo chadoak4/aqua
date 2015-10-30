@@ -3,3 +3,4 @@
   <%= cleanup.time %><%= cleanup.date %> <%# NOTE: location here get with Gavin! %>
 <% end %>
 <%= link_to 'Add Cleanup', new_cleanup_path %>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>

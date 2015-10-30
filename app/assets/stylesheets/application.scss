@@ -39,8 +39,27 @@
   padding: 8px;}
 
 .about-paragraph {
-  padding-top: 40px;
-}
+  padding-top: 40px;}
 
 .second {
-  background-color: #252525;}
+  margin-top: 40px;
+  background-color: #252525;
+  min-height: 500px;}
+
+.style_image{
+  border-style: solid;
+  border-width: 4px;
+  border-color: #354a55;}
+
+.pic-text h4{
+  color: #ffffff;}
+
+.pic-text{
+  margin-top: 50px;
+  color: #acc1cc;}
+
+.email{
+  color: #ffffff;
+  padding-top: 100px;
+  background-color: #252525;
+  min-height: 400px;}
