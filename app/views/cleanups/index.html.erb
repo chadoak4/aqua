@@ -1,0 +1,5 @@
+<% @cleanups.each do |cleanup| %>
+  <h2> <%= link_to cleanup.name, cleanup_path(cleanup) %></h2>
+  <%= cleanup.time %><%= cleanup.date %> <%# NOTE: location here get with Gavin! %>
+<% end %>
+<%= link_to 'Add Cleanup', new_cleanup_path %>

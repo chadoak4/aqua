@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html id="homepage">
+	<head>
+		<meta charset="utf-8">
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+		<title>Aqua Zest/Home</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-default-pages">
+  		<div class="container-fluid">
+    		<div class="navbar-header">
+					<class="navbar-brand-pages">
+        	  <%= image_tag('aqualogo.png', height: '70', width: '140') %>
+					</div>
+					<ul class="nav navbar-nav navbar-right">
+						<li><%= link_to "Log In", new_user_session_path %></li>
+
+      		</ul>
+    		</div>
+  		</div>
+		</nav>
+		<header class= "pages-header-background">
+			<div class="pages-header-title">
+  			<h1>Stay Informed. Get Involved. Take Action.</h1>
+				<!-- js the above portion -->
+		 </div>
+		</header>
+		<main class='first'>
+			<div class="row">
+			  <div class="col-md-1"></div>
+			  <div class="col-md-5 col-centered text-center"><%= video_tag("turtle.mp4", height: '310', width: '390', controls:true)%></div>
+			  <div class="col-md-5 col-centered about-paragraph">
+					<h4>The Ocean Needs Your Help!
+					</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae urna semper, lacinia urna eu, lobortis magna. Nam ut lacus vel lacus condimentum blandit et nec turpis. Sed iaculis ipsum a diam mollis, vitae ullamcorper nulla laoreet. Proin lectus enim, rutrum sit amet feugiat eget, vehicula vitae nibh. Donec vehicula tortor ac nulla gravida consectetur. Nulla interdum tellus quis turpis porta, eu tincidunt tellus dictum. Ut feugiat efficitur ultricies. Donec sit amet scelerisque turpis.
+					</p>
+				</div>
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+	</main>
+	<main class='second'>
+		<div class="row">
+			<div class="col-md-1">one</div>
+			<div class="col-md-5 col-centered ">two</div>
+			<div class="col-md-5 col-centered ">three</div>
+			<div class="col-md-1">four</div>
+		</div>
+	</div>
+</main>
+	</body>
+</html>
