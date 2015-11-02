@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102152508) do
+ActiveRecord::Schema.define(version: 20151102165156) do
 
   create_table "blogs", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20151102152508) do
     t.datetime "updated_at",     null: false
     t.string   "when"
     t.string   "beach_image_id"
+    t.string   "location"
   end
 
   create_table "users", force: :cascade do |t|

@@ -42,6 +42,8 @@ gem "refile-mini_magick"
 
 gem "refile-s3"
 
+gem 'exifr', '~> 1.2', '>= 1.2.3.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

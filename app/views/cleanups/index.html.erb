@@ -1,6 +1,20 @@
 <% @cleanups.each do |cleanup| %>
-  <h2> <%= link_to cleanup.name, cleanup_path(cleanup) %></h2>
-  <%= cleanup.when %> <%# NOTE: location here get with Gavin! %>
+<section class='container '>
+  <div class="row">
+    <div class="col-md-6 col-centered text-center showcleanups ">
+      <%= image_tag attachment_url(cleanup, :beach_image, :fill, 525, 346) %>
+      <div class='showcleanupsborder'>
+      <div id='showcleanupstitle'>
+        <h2> <%= link_to cleanup.name, cleanup_path(cleanup) %></h2>
+      </div>
+      <div id='showcleanupswhen'>
+        <%= cleanup.when %>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
 <% end %>
+<br>
 <%= link_to 'Add Cleanup', new_cleanup_path %>
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
