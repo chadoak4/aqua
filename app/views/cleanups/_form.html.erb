@@ -1,7 +1,6 @@
 <%= simple_form_for @cleanup do |f| %>
   <%= f.input  :name, label: "Name of beach and or location" %>
-  <%= f.input  :date %>
-  <%= f.input  :time %>
+  <%= f.input  :when %>
   <%= f.input  :description, label: "Please describe what needs to be done" %>
   <%= f.input  :supplies, label: "Please select the following supplies needed for this cleanup" %>
   <%= f.input  :additionalinfo, label: "Please provide any additional information needed to complete this specific cleanup (i.e. Hazardous waste was discovered on-site. Special gloves will be needed for this.)" %>

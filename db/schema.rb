@@ -11,17 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151029151748) do
+ActiveRecord::Schema.define(version: 20151102023637) do
+
+  create_table "blogs", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "cleanups", force: :cascade do |t|
     t.string   "name"
-    t.integer  "date"
-    t.integer  "time"
     t.text     "description"
     t.text     "supplies"
     t.text     "additionalinfo"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "when"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,6 +46,7 @@ ActiveRecord::Schema.define(version: 20151029151748) do
     t.string   "uid"
     t.string   "nickname"
     t.string   "access_token"
+    t.boolean  "admin"
   end
 
   add_index "users", ["provider"], name: "index_users_on_provider"

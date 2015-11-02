@@ -3,7 +3,7 @@ class CleanupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @cleanups = Cleanup.all.order('date DESC')
+    @cleanups = Cleanup.all.order('created_at DESC')
   end
 
   def new
@@ -49,6 +49,6 @@ class CleanupsController < ApplicationController
     end
 
     def cleanup_params
-      params.require(:cleanup).permit(:name, :date, :time, :description, :supplies, :additionalinfo)
+      params.require(:cleanup).permit(:name, :description, :supplies, :additionalinfo)
     end
 end

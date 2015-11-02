@@ -35,6 +35,9 @@ gem 'omniauth-twitter'
 
 gem 'dotenv-rails'
 
+gem 'rails_admin', '~> 0.7.0'
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
