@@ -100,11 +100,27 @@
     }
 }
 
-.login{
+.login {
   margin-top: 100px;
    background-color: #354a55;
    opacity: .8;
    min-height: 200px;
    max-width: 400px;
    color: #ffffff;
- }
+}
+
+a:link {
+  color: #acc1cc;
+}
+
+a:visited {
+  color: #acc1cc;
+}
+
+a:hover {
+  color: #ffffff;
+}
+
+a:active {
+  color: #acc1cc;
+}

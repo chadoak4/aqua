@@ -4,6 +4,8 @@
   <head>
     <meta charset="utf-8">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
     <title>Aqua Zest</title>
   </head>
 
@@ -30,8 +32,9 @@
     </nav>
     <header class="pages-header-background">
       <div class="pages-header-title">
-        <h1>Stay Informed. Get Involved. Take Action.</h1>
-<!-- js the above portion -->
+        <div id="content-1"><h1>Stay Informed</h1></div>
+        <div id="content-2"><h1>Get Involved</h1></div>
+        <div id="content-3"><h1>Take Action</h1></div>
       </div>
     </header>
     <section class='container first'>
