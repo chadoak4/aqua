@@ -1,5 +1,5 @@
 <%= simple_form_for @cleanup do |f| %>
-  <%= f.input  :name, label: "Name of beach and or location" %>
+  <%= f.input  :name, label: "Name of beach and or location", :input_html => {:maxlength => 40 }%>
   <%= f.attachment_field :beach_image %>
   <%= f.input  :when %>
   <%= f.input  :description, label: "Please describe what needs to be done" %>
