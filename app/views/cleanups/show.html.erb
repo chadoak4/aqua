@@ -6,3 +6,8 @@
 <%= @cleanup.supplies %>
 <%= @cleanup.additionalinfo %>
 <%= link_to 'Edit', edit_cleanup_path(@cleanup) %>
+
+<% if current_user.id == admin %>
+<%= link_to 'Delete', topic_path(@topic), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
+<% else %>
+<% end %>
