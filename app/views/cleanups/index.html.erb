@@ -1,13 +1,13 @@
-<div id='cleanups-title'>
+<div id='indexcleanups-title'>
   <h2>Current Beach Cleanups</h2><span><%= link_to 'Add Cleanup', new_cleanup_path %></span>
 </div>
 <% @cleanups.each do |cleanup| %>
-<div class="container show">
+<div class="container index-cleanup">
   <div class="row row-centered">
-    <div class="col-md-6 col-centered showcleanups">
-      <div class="show-border">
+    <div class="col-md-6 col-centered indexcleanups">
+      <div class="index-border">
         <%= image_tag attachment_url(cleanup, :beach_image, :fill, 547, 347) %>
-        <div class= "showcleanups-layover">
+        <div class= "indexcleanups-layover">
           <%= link_to cleanup.name, cleanup_path(cleanup) %>
           <p>
             <%= cleanup.when %>

@@ -11,11 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102165156) do
+ActiveRecord::Schema.define(version: 20151104072020) do
 
   create_table "blogs", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.string   "tite"
+    t.text     "entry"
+    t.string   "beach_image_id"
   end
 
   create_table "cleanups", force: :cascade do |t|
@@ -28,6 +31,9 @@ ActiveRecord::Schema.define(version: 20151102165156) do
     t.string   "when"
     t.string   "beach_image_id"
     t.string   "location"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "eventtime"
   end
 
   create_table "users", force: :cascade do |t|

@@ -9,7 +9,7 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require jquery-ui/datepicker
  *= require_tree .
  *= require_self
  */
@@ -136,7 +136,7 @@ a:active {
   color: #acc1cc;
 }
 
-.showcleanups-layover {
+.indexcleanups-layover {
   background-color:#252525;
   width: 547px;
   height: 70px;
@@ -159,7 +159,7 @@ a:active {
     color: #ffffff;
   }
 }
-.show-border{
+.index-border{
   margin-top: 50px;
   height: 355px;
   border-style: solid;
@@ -167,7 +167,7 @@ a:active {
   border-color: #acc1cc;
 }
 
-#cleanups-title{
+#indexcleanups-title{
   color:#ffffff;
   position:relative;
   top: -10px;
@@ -184,3 +184,45 @@ a:active {
 
   }
 }
+
+#edit-title {
+  text-align: center;
+  color: #ffffff;
+}
+
+.edit-cleanup {
+  color: #acc1cc;
+}
+
+#holder{
+
+			position: relative;
+			width: 600px;
+			margin: 100px auto;
+      z-index: -3;
+
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+
+		#slogans{
+			position: relative;
+			top: 0px;
+			right: 0px;
+		}
+
+		p.slogan{
+			text-rendering: optimizeLegibility;
+			margin: 0px;
+			font-size: 60px;
+			text-transform: uppercase;
+		}
+
+		p.slogan strong{
+			display:block;
+			position:relative;
+			opacity:0;
+		}

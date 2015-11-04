@@ -44,6 +44,14 @@ gem "refile-s3"
 
 gem 'exifr', '~> 1.2', '>= 1.2.3.1'
 
+gem 'geocoder'
+
+gem 'gmaps4rails'
+
+gem 'jquery-ui-rails'
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

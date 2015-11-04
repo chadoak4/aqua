@@ -1,9 +1,20 @@
+<div class="row row-centered">
+  <div class="col-md-offset-4 col-md-4 col-centered ">
+    <div class="edit-cleanup">
 <%= simple_form_for @cleanup do |f| %>
-  <%= f.input  :name, label: "Name of beach and or location", :input_html => {:maxlength => 40 }%>
+  <div class='pic-text'>
+    Picture of Location
+  </div>
   <%= f.attachment_field :beach_image %>
-  <%= f.input  :when %>
-  <%= f.input  :description, label: "Please describe what needs to be done" %>
-  <%= f.input  :supplies, label: "Please select the following supplies needed for this cleanup" %>
-  <%= f.input  :additionalinfo, label: "Please provide any additional information needed to complete this specific cleanup (i.e. Hazardous waste was discovered on-site. Special gloves will be needed for this.)" %>
-  <%= f.button :submit, "Take Action" %>
+  <%= f.input            :name, label: "Name of beach and or location", :input_html => {:maxlength => 40 }%>
+  <%= f.text_field       :when, label: "Date" %>
+  <%= f.input            :eventtime, label: "Event Time", :collection => 1..12 %>
+  <%= f.input            :location %>
+  <%= f.input            :description, label: "Please describe what needs to be done" %>
+  <%= f.input            :supplies, label: "Please select the following supplies needed for this cleanup" %>
+  <%= f.input            :additionalinfo, label: "Please provide any additional information needed to complete this specific cleanup (i.e. Hazardous waste was discovered on-site. Special gloves will be needed for this.)" %>
+  <%= f.button           :submit, "Take Action" %>
 <% end %>
+    </div>
+  </div>
+</div>
