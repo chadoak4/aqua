@@ -4,10 +4,6 @@ class CleanupsController < ApplicationController
 
   def index
     @cleanups = Cleanup.all.order('created_at DESC')
-    @hash = Gmaps4rails.build_markers(@cleanups) do |cleanup, marker|
-      marker.lat cleanup.latitude
-      marker.lng cleanup.longitude
-    end
   end
 
   def new
@@ -25,7 +21,10 @@ class CleanupsController < ApplicationController
   end
 
   def show
-
+    @hash = Gmaps4rails.build_markers(@cleanup) do |cleanup, marker|
+      marker.lat cleanup.latitude
+      marker.lng cleanup.longitude
+    end
   end
 
   def update
@@ -44,13 +43,12 @@ class CleanupsController < ApplicationController
     @cleanup = Cleanup.find(params[:id])
   end
 
+  def destroy
+    @cleanup.destroy
+    redirect_to cleanups_path
+  end
+
   private
-
-
-    def destroy
-      @cleanup.destroy
-      redirect_to cleanups_path
-    end
 
     def cleanup_params
       params.require(:cleanup).permit(:name, :beach_image, :location, :longitude, :latitude, :when, :eventtime, :description, :supplies, :additionalinfo)

@@ -1,5 +1,5 @@
-<div id='indexcleanups-title'>
-  <h2>Current Beach Cleanups</h2><span><%= link_to 'Add Cleanup', new_cleanup_path %></span>
+<div class='indexcleanups-title'>
+  <h2>Current Beach Cleanups</h2><%= link_to 'Add Cleanup', new_cleanup_path %>
 </div>
 <% @cleanups.each do |cleanup| %>
 <div class="container index-cleanup">
@@ -16,4 +16,5 @@
       </div>
     </div>
     <% end %>
+  </div>
 </div>

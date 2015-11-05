@@ -1,0 +1,7 @@
+I"j(function() {
+  jQuery(function() {
+    return $('cleanup_when').datepicker();
+  });
+
+}).call(this);
+:ET

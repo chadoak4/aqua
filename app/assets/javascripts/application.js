@@ -11,21 +11,16 @@
 // about supported directives.
 //
 //= require jquery
-//= require gmaps/google
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require underscore
+//= require gmaps/google
 //= require turbolinks
 //= require jquery-ui/datepicker
 //= require_tree .
 
 
 
-$(function() {
-  $("#cleanup_when").datepicker();
-});
-
-
-$('#cycletext').cycle({ 
-    fx:    'scrollRight',
-    delay: -1000
-});
+$('#address').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})

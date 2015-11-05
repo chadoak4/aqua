@@ -1,3 +1,7 @@
+
+ <link rel="stylesheet" type="text/css" href="DateTimePicker.css" />
+ <script type="text/javascript" src="DateTimePicker.js"></script>
+
 <div class="row row-centered">
   <div class="col-md-offset-4 col-md-4 col-centered ">
     <div class="edit-cleanup">
@@ -7,8 +11,7 @@
   </div>
   <%= f.attachment_field :beach_image %>
   <%= f.input            :name, label: "Name of beach and or location", :input_html => {:maxlength => 40 }%>
-  <%= f.text_field       :when, label: "Date" %>
-  <%= f.input            :eventtime, label: "Event Time", :collection => 1..12 %>
+  <%= f.input            :when, label: "Date and time" %>
   <%= f.input            :location %>
   <%= f.input            :description, label: "Please describe what needs to be done" %>
   <%= f.input            :supplies, label: "Please select the following supplies needed for this cleanup" %>

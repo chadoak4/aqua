@@ -189,6 +189,9 @@ GEM
     refile-mini_magick (0.2.0)
       mini_magick (~> 4.0)
       refile (~> 0.5)
+    refile-postgres (1.1.4)
+      pg
+      refile (~> 0.6.1)
     refile-s3 (0.2.0)
       aws-sdk (~> 2.0)
       refile (~> 0.6.0)
@@ -269,6 +272,7 @@ DEPENDENCIES
   rails_admin (~> 0.7.0)
   refile
   refile-mini_magick
+  refile-postgres
   refile-s3
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

@@ -50,7 +50,7 @@ gem 'gmaps4rails'
 
 gem 'jquery-ui-rails'
 
-
+gem 'refile-postgres'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

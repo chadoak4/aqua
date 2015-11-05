@@ -1,3 +1,117 @@
 // Place all the styles related to the cleanups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.indexcleanups-layover {
+  background-color:#252525;
+  width: 547px;
+  height: 70px;
+  opacity: .92;
+  position:relative;
+  top: -70px;
+
+  a {
+    position: relative;
+    top: 5px;
+    left: 10px;
+    font-size: 21px;
+    color: #acc1cc;
+  }
+
+  p {
+    position: relative;
+    left: 12px;
+    font-size: 14px;
+    color: #ffffff;
+  }
+}
+
+.index-border{
+  margin-top: 138px;
+  height: 355px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #acc1cc;
+}
+
+.indexcleanups-title{
+  color:#ffffff;
+  position:relative;
+  width: 600px;
+  top: 70px;
+  left: 70px;
+  padding: 0px;
+  margin-bottom: -75px;
+  z-index: 1;
+
+  a {
+    font-size: 12px;
+    position:relative;
+    top: -14px;
+    left: 5px;
+
+  }
+}
+
+#edit-title {
+  text-align: center;
+  color: #ffffff;
+}
+
+.edit-cleanup {
+  color: #acc1cc;
+}
+
+.title-name{
+  color: #ffffff;
+  position: relative;
+  left: 195px;
+}
+
+.panel-group {
+  margin-bottom: -15px !important;
+}
+.panel-default > .panel-heading {
+  background-color: #354a55 !important;
+}
+
+.panel{
+  border-style: none;
+  border-width: 0px !important;
+}
+
+#map{
+  left: 50px;
+}
+.collapsing, .in {background-color: #252525;
+}
+
+.show-headers{
+  color: #ffffff;
+  font-size: 16px;
+  position: relative;
+  top: 10px;
+}
+
+.show-border{
+  margin-top: 110px;
+  height: 355px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #acc1cc;
+}
+
+.show-links-top {
+  position: absolute;
+  right: 500px;
+  top: 100px;
+}
+.show-links-bottom{
+  font-size: 16px;
+  color:#acc1cc;
+  position: relative;
+  top: 8px;
+  left: 10px;
+  z-index: -4;
+
+}

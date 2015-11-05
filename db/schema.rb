@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104072020) do
+ActiveRecord::Schema.define(version: 20151105012030) do
 
   create_table "blogs", force: :cascade do |t|
     t.datetime "created_at",     null: false
@@ -28,13 +28,18 @@ ActiveRecord::Schema.define(version: 20151104072020) do
     t.text     "additionalinfo"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "when"
     t.string   "beach_image_id"
     t.string   "location"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "eventtime"
+    t.datetime "when"
   end
+
+  create_table "refile_attachments", force: :cascade do |t|
+    t.string "namespace", null: false
+  end
+
+  add_index "refile_attachments", ["namespace"], name: "index_refile_attachments_on_namespace"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: ""
