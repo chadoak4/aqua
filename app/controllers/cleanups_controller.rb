@@ -53,4 +53,5 @@ class CleanupsController < ApplicationController
     def cleanup_params
       params.require(:cleanup).permit(:name, :beach_image, :location, :longitude, :latitude, :when, :eventtime, :description, :supplies, :additionalinfo)
     end
+
 end
