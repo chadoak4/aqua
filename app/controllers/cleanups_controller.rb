@@ -3,15 +3,15 @@ class CleanupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @cleanups = Cleanup.all.order('created_at DESC')
+    @cleanups = Cleanup.all.order(%{"when" DESC})
   end
 
   def new
-    @cleanup = Cleanup.new
+    @cleanup = current_user.cleanups.build
   end
 
   def create
-    @cleanup = Cleanup.new(cleanup_params)
+    @cleanup = current_user.cleanups.build(cleanup_params)
 
     if @cleanup.save
       redirect_to cleanups_path
@@ -46,6 +46,20 @@ class CleanupsController < ApplicationController
   def destroy
     @cleanup.destroy
     redirect_to cleanups_path
+  end
+
+  def gpsify
+    # TODO: Remind gavin about security
+    path = Rails.root.join("tmp/uploads/cache", params[:cache_id]).to_s
+
+    exifr = EXIFR::JPEG.new(path)
+    gps = exifr.gps
+    if gps
+      @lat = gps.latitude
+      @lng = gps.longitude
+    else
+      render nothing: true
+    end
   end
 
   private

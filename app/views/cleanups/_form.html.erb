@@ -9,7 +9,9 @@
   <div class='pic-text'>
     Picture of Location
   </div>
-  <%= f.attachment_field :beach_image %>
+  <%= f.attachment_field :beach_image, direct: true %>
+  <%= f.hidden_field     :latitude %>
+  <%= f.hidden_field     :longitude %>
   <%= f.input            :name, label: "Name of beach and or location", :input_html => {:maxlength => 40 }%>
   <%= f.input            :when, label: "Date and time" %>
   <%= f.input            :location %>
@@ -21,3 +23,20 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+$(function()
+{
+  $("#new_cleanup").on("upload:success", function(event) {
+    var hidden_upload_field = $("input[name='cleanup[beach_image]']");
+    var raw_json_data = hidden_upload_field.val();
+    var parsed_json_data = JSON.parse(raw_json_data);
+    var cache_id = parsed_json_data.id;
+
+    $.ajax('/cleanups/gpsify',
+        {
+          data: { cache_id: cache_id }
+        });
+  });
+});
+</script>

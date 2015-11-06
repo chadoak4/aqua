@@ -3,9 +3,13 @@
 <div class='indexcleanups-title'>
   <h2 class=title-name><%= @cleanup.name %></h2>
 </div>
-<div class"show-links-top">
+<% if user_signed_in? %>
+  <% if @cleanup.user_id == current_user.id %>
+  <div class"show-links-top">
   <%= link_to 'Edit', edit_cleanup_path(@cleanup) %>
   <%= link_to 'Delete', cleanup_path(@cleanup), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
+  <% end %>
+<% end %>
 </div>
 <div class="container index-cleanup">
   <div class="row row-centered">
@@ -72,9 +76,12 @@
 </div>
 
 <script type="text/javascript">
-handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%=raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});</script>
+$(function() {
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers(<%=raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+});
+</script>

@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
-  resources :cleanups
+  resources :cleanups do
+    collection do
+      get :gpsify
+    end
+    resources :attendingevents
+  end
   resources :blogs
 
   root 'pages#show'

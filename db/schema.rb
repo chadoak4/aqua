@@ -11,14 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151105012030) do
+ActiveRecord::Schema.define(version: 20151105224414) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "attending_events", force: :cascade do |t|
+    t.string   "participation"
+    t.text     "comment"
+    t.integer  "number_of_guests"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "user_id"
+    t.integer  "cleanup_id"
+  end
 
   create_table "blogs", force: :cascade do |t|
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.string   "tite"
     t.text     "entry"
-    t.string   "beach_image_id"
+    t.string   "blog_image_id"
   end
 
   create_table "cleanups", force: :cascade do |t|
@@ -33,13 +46,14 @@ ActiveRecord::Schema.define(version: 20151105012030) do
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "when"
+    t.integer  "user_id"
   end
 
   create_table "refile_attachments", force: :cascade do |t|
     t.string "namespace", null: false
   end
 
-  add_index "refile_attachments", ["namespace"], name: "index_refile_attachments_on_namespace"
+  add_index "refile_attachments", ["namespace"], name: "index_refile_attachments_on_namespace", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: ""
@@ -62,8 +76,8 @@ ActiveRecord::Schema.define(version: 20151105012030) do
     t.boolean  "admin"
   end
 
-  add_index "users", ["provider"], name: "index_users_on_provider"
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["uid"], name: "index_users_on_uid"
+  add_index "users", ["provider"], name: "index_users_on_provider", using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["uid"], name: "index_users_on_uid", using: :btree
 
 end
