@@ -3,7 +3,7 @@ class CleanupsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @cleanups = Cleanup.all.order(%{"when" DESC})
+    @cleanups = Cleanup.all.where("eventtimeframe>=?", Date.today)
   end
 
   def new
@@ -65,7 +65,7 @@ class CleanupsController < ApplicationController
   private
 
     def cleanup_params
-      params.require(:cleanup).permit(:name, :beach_image, :location, :longitude, :latitude, :when, :eventtime, :description, :supplies, :additionalinfo)
+      params.require(:cleanup).permit(:name, :beach_image, :location, :longitude, :latitude, :eventtimeframe, :eventtime, :description, :supplies, :additionalinfo)
     end
 
 end

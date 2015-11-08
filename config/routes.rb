@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     collection do
       get :gpsify
     end
-    resources :attendingevents
+    resources :attendees
   end
   resources :blogs
 

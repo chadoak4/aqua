@@ -1,0 +1,6 @@
+
+<% User.all.each do |user| %>
+<% if user.attendee.attending == "Yes" %>
+<%= user.name %>
+<% end %>
+<% end %>

@@ -12,15 +12,22 @@
     <% if user_signed_in? %>
       <% if current_user.admin? %>
       <div class='cleanup-links'>
+        <%= link_to "Plan to Attend?", new_cleanup_attendee_path(@cleanup)%>
         <%= link_to 'Edit', edit_cleanup_path(@cleanup) %>
         <%= link_to 'Delete', cleanup_path(@cleanup), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
+        <%= link_to 'Back', cleanups_path %>
       </div>
       <% elsif @cleanup.user_id == current_user.id %>
       <div class='cleanup-links'>
+        <%= link_to "Plan to Attend?", new_cleanup_attendee_path(@cleanup)%>
         <%= link_to 'Edit', edit_cleanup_path(@cleanup) %>
+        <%= link_to 'Back', cleanups_path %>
       </div>
       <% else %>
-      <% render nothing: true %>
+      <div class='cleanup-links'>
+        <%= link_to "Plan to Attend?", new_cleanup_attendee_path(@cleanup)%>
+        <%= link_to 'Back', cleanups_path %>
+      </div>
       <% end %>
     <% end %>
     <br>
@@ -31,7 +38,7 @@
       </p>
       <h4>Cleanup Date/Time</h4>
       <p>
-        <%= @cleanup.when %>
+        <%= @cleanup.eventtimeframe %>
       </p>
       <h4>Location</h4>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -55,7 +62,7 @@
         <br>
       <h4>Supplies Needed</h4>
       <p>
-        <%= @cleanup.supplies%>
+        <% @cleanup.supplies %>
       </p>
       <h4>Important Additional Information</h4>
       <p>
@@ -70,11 +77,12 @@
   <br>
   <br>
   <div class="row">
-    <h2 class="centered">People planning to attend</h2>
+    <h2 class="centered">Attending</h2>
     <hr>
     <br>
     <div class="col-lg-offset-2 col-lg-8">
       <p>pictures and names will go he</p>
+      <%= render @cleanup.attendees %>
     </div><!-- col-lg -->
   </div><!-- row -->
 <script type="text/javascript">
