@@ -1,20 +1,25 @@
-<div class='indexcleanups-title'>
-  <h2>Current Beach Cleanups</h2><%= link_to 'Add Cleanup', new_cleanup_path %>
+<br>
+<BR>
+<br>
+<h1 class="centered">CURRENT BEACH CLEANUPS</h1>
+<div class='add-link'>
+  <%= link_to 'Add Cleanup', new_cleanup_path %>
 </div>
+<hr class= "index-hr">
 <% @cleanups.each do |cleanup| %>
-<div class="container index-cleanup">
-  <div class="row row-centered">
-    <div class="col-md-6 col-centered indexcleanups">
+<div class="container" id="index">
+  <div class="row white ">
+    <div class="col-lg-6 cleanup-index">
       <div class="index-border">
-        <%= image_tag attachment_url(cleanup, :beach_image, :fill, 547, 347) %>
-        <div class= "indexcleanups-layover">
-          <%= link_to cleanup.name, cleanup_path(cleanup) %>
-          <p>
-            <%= cleanup.when %>
-          </p>
-        </div>
+      <%= image_tag attachment_url(cleanup, :beach_image), :class => "style_image img-responsive" %>
+      </div>
+      <div class= "indexcleanups-layover">
+        <%= link_to cleanup.name, cleanup_path(cleanup) %>
+        <p>
+          <%= cleanup.when %>
+        </p>
       </div>
     </div>
     <% end %>
   </div>
-</div>
+</div><!-- col-lg-6 -->

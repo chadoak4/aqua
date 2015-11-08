@@ -1,28 +1,27 @@
 
- <link rel="stylesheet" type="text/css" href="DateTimePicker.css" />
- <script type="text/javascript" src="DateTimePicker.js"></script>
 
-<div class="row row-centered">
-  <div class="col-md-offset-4 col-md-4 col-centered ">
-    <div class="edit-cleanup">
-<%= simple_form_for @cleanup do |f| %>
-  <div class='pic-text'>
-    Picture of Location
-  </div>
-  <%= f.attachment_field :beach_image, direct: true %>
-  <%= f.hidden_field     :latitude %>
-  <%= f.hidden_field     :longitude %>
-  <%= f.input            :name, label: "Name of beach and or location", :input_html => {:maxlength => 40 }%>
-  <%= f.input            :when, label: "Date and time" %>
-  <%= f.input            :location %>
-  <%= f.input            :description, label: "Please describe what needs to be done" %>
-  <%= f.input            :supplies, label: "Please select the following supplies needed for this cleanup" %>
-  <%= f.input            :additionalinfo, label: "Please provide any additional information needed to complete this specific cleanup (i.e. Hazardous waste was discovered on-site. Special gloves will be needed for this.)" %>
-  <%= f.button           :submit, "Take Action" %>
-<% end %>
-    </div>
-  </div>
-</div>
+<div class="container" id="edit-new">
+  <br>
+  <br>
+  <div class="row">
+    <br>
+    <div class="col-lg-offset-2 col-lg-8">
+      <%= simple_form_for @cleanup do |f| %>
+      <%= f.label            :beach_image, label: 'Add picture of location'%>
+      <%= f.attachment_field :beach_image, direct: true %>
+      <br>
+      <%= f.hidden_field     :latitude %>
+      <%= f.hidden_field     :longitude %>
+      <%= f.input            :name, label: "Name of beach and or location", :input_html => {:maxlength => 40 }%>
+      <%= f.input            :when, label: "Date and time" %>
+      <%= f.input            :location %>
+      <%= f.input            :description, label: "Please describe what needs to be done" %>
+      <%= f.input            :supplies, label: "Please select the following supplies needed for this cleanup" %>
+      <%= f.input            :additionalinfo, label: "Please provide any additional information needed to complete this specific cleanup (i.e. Hazardous waste was discovered on-site. Special gloves will be needed for this.)" %>
+      <%= f.button           :submit, "Take Action" %>
+      <% end %>
+    </div><!-- col-lg -->
+  </div><!-- row -->
 
 <script type="text/javascript">
 $(function()

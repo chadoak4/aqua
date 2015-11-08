@@ -7,22 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="navbar navbar-default-pages navbar-fixed-top">
-    <div class="container-fluid">
+
+
+  <div id="navbar-main">
+    <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
       <div class="navbar-header">
-        <class="navbar-brand-pages">
-          <%= image_tag('aqualogo.png', height: '70', width: '130') %>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <%= image_tag('logo2.png', height: '34', width: '45') %>
+        </button>
+        <a class="navbar-brand hidden-xs hidden-sm" href="#home"><%= image_tag('logo2.png', height: '34', width: '45') %></a>
+      </div>
+
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+
           <% if user_signed_in? %>
           <li>
             <%= link_to "Home", cleanups_path %>
           </li>
           <li>
             <%= link_to "Blog", blogs_path %>
-          </li>
-          <li>
-            <%= link_to "Cleanups", cleanups_path %>
           </li>
           <li>
             <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -32,12 +38,20 @@
             <%= link_to "Log In", new_user_session_path %>
           </li>
           <% end %>
-        </ul>
-      </div>
+      </div><!--/.nav-collapse -->
     </div>
-  </nav>
+  </div>
+  </div>
+
 
 <%= yield %>
+
+
+<div id="footerwrap">
+	<div class="container">
+		<h4>Aqua Zest</h4>
+	</div>
+</div>
 
 </body>
 </html>

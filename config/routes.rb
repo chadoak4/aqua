@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   resources :blogs
 
-  root 'pages#show'
+  root 'home#show'
 
   # root 'cleanups#index'
 
