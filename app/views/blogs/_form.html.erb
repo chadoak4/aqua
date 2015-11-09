@@ -1,0 +1,15 @@
+
+
+<div class="container" id="edit-new">
+  <br>
+  <br>
+  <div class="row">
+    <br>
+    <div class="col-lg-offset-2 col-lg-8">
+      <%= simple_form_for @blog do |f| %>
+      <%= f.input  :tite, label: "Title of post"  %>
+      <%= f.input  :entry, label: "Blog Entry"  %>
+      <%= f.button :submit, "Submit" %>
+      <% end %>
+    </div><!-- col-lg -->
+  </div><!-- row -->

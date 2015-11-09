@@ -49,8 +49,14 @@ class CleanupsController < ApplicationController
   end
 
   def gpsify
-    # TODO: Remind gavin about security
-    path = Rails.root.join("tmp/uploads/cache", params[:cache_id]).to_s
+    # Only allow hexadecimal cacheids. Avoids someone trying to navigate file system
+    cache_id = params[:cache_id]
+    if cache_id =~ /[^0-9A-Za-z]/
+      render nothing: true
+      return
+    end
+
+    path = Rails.root.join("tmp/uploads/cache", cache_id).to_s
 
     exifr = EXIFR::JPEG.new(path)
     gps = exifr.gps

@@ -7,8 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-
   <div id="navbar-main">
     <!-- Fixed navbar -->
   <div class="navbar navbar-inverse navbar-fixed-top">
@@ -43,15 +41,14 @@
   </div>
   </div>
 
-
 <%= yield %>
 
-
-<div id="footerwrap">
-	<div class="container">
-		<h4>Aqua Zest</h4>
-	</div>
-</div>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <div class="navbar-header">
+          <%= image_tag('logo2.png', height: '34', width: '45') %>
+      </div>
+  </nav>
 
 </body>
 </html>

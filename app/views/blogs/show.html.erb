@@ -1,0 +1,25 @@
+<div class="container" id="cleanup-show" >
+  <br>
+  <br>
+  <div class="row">
+    <h2 class="centered"><%= @blog.tite %></h2>
+    <hr>
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+      <div class='cleanup-links'>
+        <%= link_to 'Edit', edit_blog_path(@blog) %>
+        <%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: "Are you sure you want to delete?"} %>
+        <%= link_to 'Back', blogs_path %>
+      </div>
+      <% else %>
+      <div class='cleanup-links'>
+        <%= link_to 'Back', blogs_path %>
+      </div>
+      <% end %>
+    <% end %>
+    <br>
+    <div class="col-lg-offset-2 col-lg-8 cleanup-info">
+      <%= @blog.entry %></h2>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,33 @@
-hi
+
+
+<br>
+<br>
+<h2 class="centered">Aqua Zest's Blog</h2>
+<hr>
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+  <div class='cleanup-links'>
+    <%= link_to "New Blog", new_blog_path(@blog)%>
+  </div>
+  <% else %>
+  <div class='cleanup-links'>
+    <%= link_to 'Back', cleanups_path %>
+  </div>
+  <% end %>
+<% end %>
+<div class="container" id="cleanup-show" >
+  <br>
+  <br>
+  <% @blogs.each do |blog| %>
+  <div class="row">
+    <br>
+    <div class="col-lg-offset-2 col-lg-8 blogpost">
+      <h2 class="centered"><%= blog.tite %></h2>
+      <p>
+        <%= truncate blog.entry, length: 300 %>
+        <%= link_to 'read more', blog_path(blog) %>
+      </p>
+    </div>
+  </div>
+</div>
+  <% end %>

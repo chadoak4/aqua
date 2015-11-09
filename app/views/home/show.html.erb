@@ -36,10 +36,11 @@
             <li>
               <%= link_to "Home", cleanups_path %>
             </li>
+            <li>
+              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+            </li>
             <% else %>
             <li>
-
-
 
               <!-- Button trigger modal -->
               <a type="login" data-toggle="modal" data-target="#myModal">
@@ -55,7 +56,7 @@
                       <h4 class="modal-title" id="myModalLabel">Sign In</h4>
                     </div>
                     <div class="modal-body">
-                      <%= image_tag('twitter-icon.png', height: '33', width: '33') %>
+                      <%= image_tag('twitter-icon.png', height: '33', width: '33') %><%= link_to "Sign in with Twitter", omniauth_authorize_path(:user, :twitter) %><br />
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -156,8 +157,7 @@
     </div><!-- row -->
     </div><!-- greywrap -->
 
-
-		<div class="container" id="blog" >
+		<!-- <div class="container" id="blog" >
 			<br>
 			<br>
 			<div class="row">
@@ -166,11 +166,8 @@
 				<br>
 				<div class="col-lg-offset-2 col-lg-8">
 					<p>Try and get blog sign up here</p>
-				</div><!-- col-lg -->
-			</div><!-- row -->
-
-
-
+				</div>
+			</div> -->
     <section class="section-divider textdivider divider2">
   			<div class="container">
             <h1 class="shadow">“Small acts, when multiplied by millions of people, can transform the world.”</h1>
@@ -180,19 +177,16 @@
   	</section><!-- section -->
 
 
-		<div class="container" id="contact" name="contact">
-			<div class="row">
-			<br>
-				<h1 class="centered">THANKS FOR VISITING US</h1>
-				<hr>
 
 
-		<div id="footerwrap">
-			<div class="container">
-				<h4>Aqua Zest</h4>
-			</div>
-		</div>
 
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+      <div class="container">
+        <div class="navbar-header">
+            <%= image_tag('logo2.png', height: '34', width: '45') %>
+        </div>
+    </nav>
 
   </body>
 </html>
