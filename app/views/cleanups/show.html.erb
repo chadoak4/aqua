@@ -34,7 +34,7 @@
     <div class="col-lg-offset-2 col-lg-8 cleanup-info">
       <h4>Description</h4>
       <p>
-        <%= @cleanup.description%>
+        <%= markdown(@cleanup.description) %>
       </p>
       <h4>Cleanup Date/Time</h4>
       <p>
@@ -62,11 +62,11 @@
         <br>
       <h4>Supplies Needed</h4>
       <p>
-        <% @cleanup.supplies %>
+        <%= @cleanup.supplies %>
       </p>
       <h4>Important Additional Information</h4>
       <p>
-        <%= @cleanup.additionalinfo %>
+        <%= markdown(@cleanup.additionalinfo) %>
       </p>
     </div>
   </div>
@@ -84,6 +84,7 @@
       <%= render @cleanup.attendees %>
     </div><!-- col-lg -->
   </div><!-- row -->
+</div>
 <script type="text/javascript">
 $(function() {
   handler = Gmaps.build('Google');

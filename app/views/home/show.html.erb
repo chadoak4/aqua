@@ -18,36 +18,34 @@
 
   <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
 
-
-  	<div id="navbar-main">
+    <div id="navbar-main">
       <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <%= image_tag('logo2.png', height: '34', width: '45') %>
-          </button>
-          <a class="navbar-brand hidden-xs hidden-sm" href="#home"><%= image_tag('logo2.png', height: '34', width: '45') %></a>
-        </div>
+      <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <%= image_tag('logo2.png', height: '34', width: '45') %>
+            </button>
+            <a class="navbar-brand hidden-xs hidden-sm" href="#home"><%= image_tag('logo2.png', height: '34', width: '45') %></a>
+          </div>
 
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <% if user_signed_in? %>
-            <li>
-              <%= link_to "Home", cleanups_path %>
-            </li>
-            <li>
-              <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-            </li>
-            <% else %>
-            <li>
-
-              <!-- Button trigger modal -->
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <% if user_signed_in? %>
+              <li>
+                <%= link_to "Home", cleanups_path %>
+              </li>
+              <li>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+              </li>
+              <% else %>
+              <li>
+                <!-- Button trigger modal -->
               <a type="login" data-toggle="modal" data-target="#myModal">
-                Log In
+                  Log In
               </a>
 
-              <!-- Modal -->
+                <!-- Modal -->
               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -60,32 +58,28 @@
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Sign In</button>
                     </div>
                   </div>
                 </div>
               </div>
-            </li>
-            <li>
-              <%= link_to "Log In", new_user_session_path %>
-            </li>
-            <% end %>
-        </div><!--/.nav-collapse -->
+              </li>
+              <% end %>
+          </div><!--/.nav-collapse -->
+        </div>
       </div>
-    </div>
     </div>
 
 		<!-- ==== HEADERWRAP ==== -->
-	    <div id="headerwrap" id="home" name="home">
-			<header class="clearfix">
-	  		 		<h1><%= image_tag('logo11.png', height: '200', width: '280') %></h1>
-	  		 		<p>Think Globally</p>
-	  		 		<p>Act Locally</p>
-	  		</header>
-	    </div><!-- /headerwrap -->
+	  <div id="headerwrap" id="home" name="home">
+		  <header class="clearfix">
+	  		 <h1><%= image_tag('logo11.png', height: '200', width: '280') %></h1>
+	  		 	<p>Think Globally</p>
+	  		 	<p>Act Locally</p>
+	  	</header>
+	  </div><!-- /headerwrap -->
 
 		<!-- ==== GREYWRAP ==== -->
-		<div id="greywrap">
+	   <div id="greywrap">
 			<div class="row">
 				<div class="col-lg-4 callout">
 					<span class="icon icon-stack"></span>
@@ -115,7 +109,7 @@
 				<hr>
 
 				<div class="col-lg-6">
-					<%= video_tag("Intro.mp4", height: '370', width: '540', controls:true)%>
+					<%= video_tag("AquaZest.mp4", height: '370', width: '100%', controls:true)%>
 				</div><!-- col-lg-6 -->
 
 				<div class="col-lg-6">
@@ -135,26 +129,26 @@
 			</div><!-- container -->
 		</section><!-- section -->
 
-  <div id="greywrap">
-    <div class="row">
-      <div class="col-lg-4 callout">
-        <h2>Stay Informed</h2>
-        <%= image_tag('turtle2.jpg', height: '236', width: '355') %>
-        <p>Aqua Zest's blog delivers current information on a variety of ways you can help the ocean and the animals living in it </p>
-      </div><!-- col-lg-4 -->
+    <div id="greywrap">
+      <div class="row">
+        <div class="col-lg-4 callout">
+          <h2>Stay Informed</h2>
+          <%= image_tag('turtle2.jpg', height: '236', width: '355') %>
+          <p>Aqua Zest's blog delivers current information on a variety of ways you can help the ocean and the animals living in it </p>
+        </div><!-- col-lg-4 -->
 
-      <div class="col-lg-4 callout">
-        <h2>Get Involved</h2>
-        <%= image_tag('teach.jpg', height: '236', width: '355') %>
-        <p>Discover ways to become involved in Ocean Conservation through our blogs and the cleanup application offered by Aqua Zest.  </p>
-      </div><!-- col-lg-4 -->
+        <div class="col-lg-4 callout">
+          <h2>Get Involved</h2>
+          <%= image_tag('teach.jpg', height: '236', width: '355') %>
+          <p>Discover ways to become involved in Ocean Conservation through our blogs and the cleanup application offered by Aqua Zest.  </p>
+        </div><!-- col-lg-4 -->
 
-      <div class="col-lg-4 callout">
-        <h2>Take Action</h2>
-        <%= image_tag('clean.jpg', height: '236', width: '355') %>
-        <p>Sign up for a beach cleanup today! There are a variety of locations to choose from. </p>
-      </div><!-- col-lg-4 -->
-    </div><!-- row -->
+        <div class="col-lg-4 callout">
+          <h2>Take Action</h2>
+          <%= image_tag('clean.jpg', height: '236', width: '355') %>
+          <p>Sign up for a beach cleanup today! There are a variety of locations to choose from. </p>
+        </div><!-- col-lg-4 -->
+      </div><!-- row -->
     </div><!-- greywrap -->
 
 		<!-- <div class="container" id="blog" >
@@ -176,15 +170,10 @@
   			</div><!-- container -->
   	</section><!-- section -->
 
-
-
-
-
-
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
         <div class="navbar-header">
-            <%= image_tag('logo2.png', height: '34', width: '45') %>
+          <%= image_tag('logo2.png', height: '34', width: '45') %>
         </div>
     </nav>
 

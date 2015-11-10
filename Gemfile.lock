@@ -198,6 +198,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    redcarpet (3.3.3)
     refile (0.6.2)
       mime-types
       rest-client (~> 1.8)
@@ -295,6 +296,7 @@ DEPENDENCIES
   rails (= 4.2.4)
   rails_12factor
   rails_admin (~> 0.7.0)
+  redcarpet
   refile
   refile-mini_magick
   refile-postgres

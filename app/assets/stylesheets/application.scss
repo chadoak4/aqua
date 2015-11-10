@@ -90,10 +90,28 @@ margin-left: -15px;
 .navbar-default {
 border-color: transparent;
 background-color: #222;
+padding-top: 10px;
+
 
 }
 
+.navbar-default img {
+  position: relative;
+  right: 40px;
+}
+.navbar-header a img {
+  background-color: #222;
+  height: 30px;
+  position: absolute;
+  top: 12px;
+  left: 40px;
+  margin-bottom: 15px;
 
+}
+
+.navbar-brand a{
+  padding-bottom: 10px;
+}
 .navbar-toggle {
 border-color: transparent;
 border: 0px solid transparent;
@@ -284,6 +302,9 @@ a:after {
 	letter-spacing: 3px;
 	margin-left: 15px;
 	text-shadow: 1px 1px 1px #000;
+  margin-bottom:5px;
+  position: relative;
+  top:-30px;
 }
 
 #greywrap {
@@ -312,19 +333,10 @@ a:after {
 	margin-bottom: 10px;
 }
 
-#footerwrap {
-	background: #2b2b2b;
-	margin-top: 0px;
-	padding-top: 40px;
-	padding-bottom: 20px;
-	border-bottom: 1px solid #ddd;
-	text-align: center;
+#about p {
+  position: relative;
+  top: 10px;
 }
-
-#footerwrap h4 {
-	color: white;
-}
-
 
 .white h1 {
 	padding-top: 35px;
@@ -641,6 +653,7 @@ a:after {
   position: relative;
   top: -50px;
   padding-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .cleanup-links{
@@ -665,19 +678,17 @@ a:after {
   top: -80px;
 }
 
-.username{
-  position: relative;
-  max-width: 100px;
+.attending-pics img {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.attending-pics {
-  margin-bottom: 100px;
-  position: relative;
-  top: -30px;
-}
+
+
 #attending-section{
   position: relative;
   top:-140px;
+  margin-bottom: 150px;
 }
 /* ==========================================================================
    MEDIA QUERIES

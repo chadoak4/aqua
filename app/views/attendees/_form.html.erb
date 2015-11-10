@@ -6,10 +6,7 @@
     <div class="col-lg-offset-2 col-lg-8">
       <%= simple_form_for([@cleanup, @cleanup.attendees.new]) do |f| %>
         <%= f.label  :attending, label: "Do you plan on attending this cleanup?" %>
-        <%= f.select :attending,[['Yes'],['Maybe']]%>
-        <br>
-        <%= f.label  :attending, label: "Are you planning on bringing guests? If so how many?" %>
-        <%= f.select :guests,((0..10).map {|i| [i,i] }) %>
+        <%= f.select :attending,[['Yes'],['No']]%>
         <br>
         <%= f.button :submit, "Submit" %>
         <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
