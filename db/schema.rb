@@ -28,16 +28,6 @@ ActiveRecord::Schema.define(version: 20151108161803) do
     t.string   "user_name"
   end
 
-  create_table "attending_events", force: :cascade do |t|
-    t.string   "participation"
-    t.text     "comment"
-    t.integer  "number_of_guests"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "user_id"
-    t.integer  "cleanup_id"
-  end
-
   create_table "blogs", force: :cascade do |t|
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -60,18 +50,6 @@ ActiveRecord::Schema.define(version: 20151108161803) do
     t.datetime "eventtimeframe"
     t.integer  "user_id"
     t.string   "user_image"
-  end
-
-  create_table "participants", force: :cascade do |t|
-    t.string   "attending"
-    t.text     "comment"
-    t.integer  "guests"
-    t.integer  "user_id"
-    t.integer  "cleanup_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "user_name"
-    t.string   "name"
   end
 
   create_table "refile_attachments", force: :cascade do |t|
