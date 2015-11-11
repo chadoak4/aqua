@@ -640,10 +640,7 @@ a:after {
   }
 }
 
-#index img{
-  min-width: 100%;
-  max-height: 100%;
-}
+
 
 .edit-new {
   margin-top: 60px;
@@ -689,6 +686,10 @@ a:after {
   position: relative;
   top:-140px;
   margin-bottom: 150px;
+}
+
+#blog {
+  margin-bottom: 80px;
 }
 /* ==========================================================================
    MEDIA QUERIES

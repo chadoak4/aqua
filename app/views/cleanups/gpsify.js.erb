@@ -2,3 +2,10 @@ $("#cleanup_latitude").val("<%= @lat %>");
 $("#cleanup_longitude").val("<%= @lng %>");
 
 // Code to show show the google map location
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  handler.getMap().setZoom(15);
+});

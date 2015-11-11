@@ -52,8 +52,8 @@
             </div>
             <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
               <div class="panel-body map">
-                <div style='width: 800px;'>
-                  <div id="map" style='width: 600px; height: 275px;'></div>
+                <div style='width: 100%;'>
+                  <div id="map" style='width: 100%; height: 275px;'></div>
                 </div>
               </div>
             </div>
@@ -92,6 +92,7 @@ $(function() {
     markers = handler.addMarkers(<%=raw @hash.to_json %>);
     handler.bounds.extendWith(markers);
     handler.fitMapToBounds();
+    handler.getMap().setZoom(15);
   });
 });
 </script>

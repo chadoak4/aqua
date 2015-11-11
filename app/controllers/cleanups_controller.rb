@@ -63,6 +63,11 @@ class CleanupsController < ApplicationController
     if gps
       @lat = gps.latitude
       @lng = gps.longitude
+
+      @hash = Gmaps4rails.build_markers([:cleanup]) do |cleanup, marker|
+        marker.lat @lat
+        marker.lng @lng
+      end
     else
       render nothing: true
     end
